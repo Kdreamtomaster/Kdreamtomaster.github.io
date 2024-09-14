@@ -1,6 +1,6 @@
 <!--관련 내용 업로드-->
 
-# {Kdreamtomaster}의 블로그
+# Kdreamtomaster의 블로그
 
 즐겁게 행복하게 뚝딱뚝딱 만들고 고쳐보자
 
