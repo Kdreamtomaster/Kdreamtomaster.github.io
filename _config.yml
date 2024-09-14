@@ -1,15 +1,11 @@
 # Site settings
-# 블로그 제목을 여기에서 수정하세요
-title: {대가가 되고자 하는 꿈을 꾼다.}
-# 블로그 설명을 여기에서 수정하세요
-description: {무엇인가 되고자 하기 위해 한걸음 두걸음}  
-# 블로그 URL을 수정하세요
-url: "{블로그 URL}"
+title: "대가가 되고자 하는 꿈을 꾼다."
+description: "무엇인가 되고자 하기 위해 한걸음 두걸음"
+url: "https://kdreamtomaster.github.io"
+baseurl: ""
 github_username: Kdreamtomaster
-# 블로그 저자 이름을 수정하세요
-author: {강신우}
-# 블로그 이메일 주소를 수정하세요
-email: {kang.shin.woo.23@gmail.com}
+author: 강신우
+email: kang.shin.woo.23@gmail.com
 
 # Build settings
 markdown: kramdown
@@ -25,33 +21,15 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
 
 # Navigation menu
-navigation:
-# 블로그 제목을 여기에서 수정하세요
-  - title: Home
-# 블로그 URL을 수정하세요
-    url: /
-# 블로그 제목을 여기에서 수정하세요
-  - title: Posts
-# 블로그 URL을 수정하세요
-    url: /posts.html
-# 블로그 제목을 여기에서 수정하세요
-  - title: Achievements
-# 블로그 URL을 수정하세요
-    url: /achievements.html
-# 블로그 제목을 여기에서 수정하세요
-  - title: Tools
-# 블로그 URL을 수정하세요
-    url: /tools.html
-# 블로그 제목을 여기에서 수정하세요
-  - title: About
-# 블로그 URL을 수정하세요
-    url: /about.html
+header_pages:
+  - index.md
+  - posts.md
+  - achievements.md
+  - tools.md
+  - about.md
 
 # Collections
 collections:
@@ -60,6 +38,7 @@ collections:
     permalink: /categories/:name/
   tools:
     output: true
+    permalink: /tools/:name/
   series:
     output: true
     permalink: /series/:name/
@@ -67,30 +46,55 @@ collections:
     output: true
     permalink: /achievements/:name/
 
-# Category structure for the blog
+# Category structure
 category_structure:
   programming:
-# 블로그 제목을 여기에서 수정하세요
     title: Programming
     subcategories:
       - python
       - java
       - web-automation
   data_science:
-# 블로그 제목을 여기에서 수정하세요
     title: Data Engineering
     subcategories:
       - data_preprocessing
-      - Data Engineering Architecture
-      - MLops
-      - Data Platform
-  devops_&_cloud:
+      - data_engineering_architecture
+      - mlops
+      - data_platform
+  devops_and_cloud:
+    title: DevOps & Cloud
+    subcategories:
+      - ci_cd
+      - containerization
+      - cloud_services
 
-
-
-# _config.yml 파일의 마지막에 추가
+# Default layouts
 defaults:
   - scope:
-      path: "_data/achievement_categories.yml"
+      path: ""
+      type: "posts"
     values:
-      layout: achievement
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "_achievements"
+    values:
+      layout: "achievement"
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# SEO related
+
+
+social:
+  name: 강신우
+  links:
+    - https://github.com/Kdreamtomaster
+
+
